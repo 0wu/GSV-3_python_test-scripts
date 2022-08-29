@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     for i in range(10):
         praefix = serialConnection.read(1)
-        if praefix == 0xA5.to_bytes(1, byteorder='big'):
+        if praefix == 0x2C.to_bytes(1, byteorder='big'):
             MeasVal = serialConnection.read(2)  # .hex()
             print(convertMeasFrameToMeasValue(MeasVal))
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     try:
         while 1:
             praefix = serialConnection.read(1)
-            if praefix == 0xA5.to_bytes(1, byteorder='big'):
+            if praefix == 0x2C.to_bytes(1, byteorder='big'):
                 MeasVal = serialConnection.read(2)  # .hex()
                 print(convertMeasFrameToMeasValue(MeasVal))
     except:
